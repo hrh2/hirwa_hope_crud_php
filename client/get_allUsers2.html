@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Users</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.ajax({
+				url: "../backend/handle_get_req.php",
+				method: "GET",
+				dataType: "json",
+				success: function(data) {
+					if (data.length > 0) {
+						var table = "<table>";
+						table += "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Gender</th></tr>";
+						for (var i = 0; i < data.length; i++) {
+							table += "<tr><td>" + data[i].id + "</td><td>" + data[i].firstName + "</td><td>" + data[i].lastName + "</td><td>" + data[i].email + "</td><td>" + data[i].gender + "</td></tr>";
+						}
+						table += "</table>";
+						$("#users").html(table);
+					} else {
+						$("#users").html("No users found");
+					}
+				},
+				error: function(xhr, status, error) {
+					$("#users").html("Error: " + error);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="users"></div>
+</body>
+</html>
