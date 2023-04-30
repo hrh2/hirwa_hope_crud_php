@@ -4,10 +4,10 @@ $username='root';
 $password='';
 $db='students_db';
 $connection=mysqli_connect($servername,$username,$password,$db);
-if(!$connection){
-    echo"<h1>Connection with the Database </h1>";
+
+// Check connection
+if ($connection->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-// else{
-//      echo"<h1>Database Successfully connected !!!</h1>";
-//  };
+
 ?>
