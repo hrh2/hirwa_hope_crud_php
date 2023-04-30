@@ -18,6 +18,24 @@ function add_users($connection_db) {
     }
   };
 }
+
+// Function to get all users
+function get_users($connection){
+    $sql = "SELECT * FROM users";
+	$result = $connection->query($sql);
+	
+	if ($result->num_rows > 0) {
+		echo "<table>";
+		echo "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Gender</th></tr>";
+		while($row = $result->fetch_assoc()) {
+			echo "<tr><td>" . $row['id'] . "</td><td>" . $row['fname'] . "</td><td>" . $row['lname'] . "</td><td>" . $row['email'] . "</td><td>" . $row['gender'] . "</td></tr>";
+		}
+		echo "</table>";
+	} else {
+		echo "No users found";
+	}
+}
+
 // Function to update a user
 function update_user($connection_db) {
     if(isset($_POST['submit'])){
