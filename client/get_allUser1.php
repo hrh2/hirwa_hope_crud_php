@@ -13,11 +13,11 @@
 				<a class="navbar-brand" href="#">CRUD API</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Create</a></li>
-				<li><a href="#">Read</a></li>
-				<li><a href="#">Update</a></li>
-				<li><a href="#">Delete</a></li>
+				<li><a href="creating.html">Home</a></li>
+				<li><a href="creating.html">Create</a></li>
+				<li><a href="get_allUser1.php">Read</a></li>
+				<li><a href="updating.html">Update</a></li>
+				<li><a href="updating.html">Delete</a></li>
 			</ul>
 		</div>
 	</nav>
